@@ -1,3 +1,7 @@
-var counter = require('./count.js');
+var stuff = require('./stuff.js');
 
-counter(['ali', 'john']);
+stuff.counter(['ali', 'john']);
+
+stuff.adder(1, 5);
+
+console.log('pi is : ', stuff.pi);
