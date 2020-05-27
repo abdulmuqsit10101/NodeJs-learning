@@ -1,6 +1,6 @@
 // The Global Object in Node provides functions as the window object provides in browser.
-// for example the window object in browser provides console.log() or alert() the Global object in Node provides
-// console.log and alert as well.
+// for example the window object in browser provides console.log() and setInterval() the Global object in Node provides
+// console.log() and setInterval() as well.
 
 console.log('hello world!');
 
