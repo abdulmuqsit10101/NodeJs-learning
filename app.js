@@ -1,7 +1,9 @@
-var stuff = require('./stuff.js');
+const events = require('events');
 
-stuff.counter(['ali', 'john']);
+const myEmitter = new events.EventEmitter();
 
-stuff.adder(1, 5);
+myEmitter.on('someEvent', function (msg) {
+  console.log('msg : ', msg);
+});
 
-console.log('pi is : ', stuff.pi);
+myEmitter.emit('someEvent', 'hello world!');
