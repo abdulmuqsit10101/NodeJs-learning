@@ -2,7 +2,11 @@
 const fs = require('fs');
 
 // read a file
-const readMe = fs.readFileSync('readMe.txt', 'utf8');
-
-// write a file
-fs.writeFileSync('./writeMe.txt', 'Hello buddy! I am new file created by writeFileSyn.');
+fs.readFile('readMe.txt', 'utf8', function (err, data) {
+  if (err) throw err;
+  // write a file
+  fs.writeFile('./writeMe.txt', data, function(err){
+    if (err) console.log(err);
+    else console.log('File saved');
+  });
+});
