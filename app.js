@@ -10,3 +10,6 @@ fs.readFile('readMe.txt', 'utf8', function (err, data) {
     else console.log('File saved');
   });
 });
+
+// removing a file.
+fs.unlink('./writeMe.txt');
