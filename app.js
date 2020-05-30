@@ -2,4 +2,5 @@
 const fs = require('fs');
 
 // create a directory
-fs.mkdirSync('src');
+fs.rmdirSync('src');
+
