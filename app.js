@@ -1,6 +1,4 @@
-// module to read write files and to create and remove directories ( folders ).
-const fs = require('fs');
+// module require for creating server
+const http = require('http');
 
-// create a directory
-fs.rmdirSync('src');
 
