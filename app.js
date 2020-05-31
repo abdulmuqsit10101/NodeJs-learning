@@ -9,8 +9,4 @@ const fs = require('fs');
 const myReadStream = fs.createReadStream(__dirname + '/dummyText.txt', 'utf8');
 const myWriteStream = fs.createWriteStream(__dirname + '/streamWritten.txt');
 
-myReadStream.on('data', function (chunk) {
-  // Write Streams
-  myWriteStream.write(chunk);
-});
-
+myReadStream.pipe(myWriteStream); // pipe will do the same process and will put the data to myWriteStream
