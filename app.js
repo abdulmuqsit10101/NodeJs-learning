@@ -13,9 +13,20 @@ const server = http.createServer(function (req, res) {
   if (req.url === "/home" || req.url === "/") {
     res.writeHead(200, {'Content-Type': 'text/html'});
     fs.createReadStream(__dirname + '/home.html', 'utf8').pipe(res);
-  } else {
+  } else if (req.url === "/contact") {
     res.writeHead(200, {'Content-Type': 'text/html'});
     fs.createReadStream(__dirname + '/contact.html', 'utf8').pipe(res);
+  } else if (req.url === "/api") {
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    const obj = {
+      name: 'ali',
+      age: 19,
+      semester: '3rd'
+    };
+    res.end(JSON.stringify(obj));
+  } else {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    fs.createReadStream(__dirname + '/404.html', 'utf8').pipe(res);
   }
 });
 
