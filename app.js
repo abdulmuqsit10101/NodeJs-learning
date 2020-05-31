@@ -6,7 +6,12 @@
 // Read Streams
 
 const fs = require('fs');
-const myReadStream = fs.createReadStream(__dirname + '/dummyText.txt', 'utf8');
-const myWriteStream = fs.createWriteStream(__dirname + '/streamWritten.txt');
+const http = require('http');
 
-myReadStream.pipe(myWriteStream); // pipe will do the same process and will put the data to myWriteStream
+const server = http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'})
+  const myReadStream = fs.createReadStream(__dirname + '/dummyText.txt', 'utf8');
+  myReadStream.pipe(res);
+});
+
+server.listen(3000, '127.0.0.1');
