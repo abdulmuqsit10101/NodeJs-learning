@@ -9,9 +9,10 @@ const fs = require('fs');
 const http = require('http');
 
 const server = http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'})
-  const myReadStream = fs.createReadStream(__dirname + '/dummyText.txt', 'utf8');
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  const myReadStream = fs.createReadStream(__dirname + '/home.html', 'utf8');
   myReadStream.pipe(res);
 });
 
 server.listen(3000, '127.0.0.1');
+console.log('listening at 127.0.0.1:3000');
