@@ -9,9 +9,14 @@ const fs = require('fs');
 const http = require('http');
 
 const server = http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  const myReadStream = fs.createReadStream(__dirname + '/home.html', 'utf8');
-  myReadStream.pipe(res);
+  console.log('req : ', req.url);
+  if (req.url === "/home" || req.url === "/") {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    fs.createReadStream(__dirname + '/home.html', 'utf8').pipe(res);
+  } else {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    fs.createReadStream(__dirname + '/contact.html', 'utf8').pipe(res);
+  }
 });
 
 server.listen(3000, '127.0.0.1');
