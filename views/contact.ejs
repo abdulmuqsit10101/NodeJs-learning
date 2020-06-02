@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Contact</title>
     <style>
         :root {
             --white: #fff;
@@ -28,13 +28,7 @@
 </head>
 <body>
 <%- include('partials/nav.ejs') %>
-<p>Welcome to the profile of <strong><%= person %></strong></p>
-<p>Age : <%= data.age %></p>
-<p>Job : <%= data.job %></p>
-<p>Hobbies: </p>
-<% data.hobbies.forEach(function(item){ %>
-    <li><%= item %></li>
-<% }) %>
-<hr>
+<h1>Contact Us</h1>
+<p>We will provide</p>
 </body>
 </html>

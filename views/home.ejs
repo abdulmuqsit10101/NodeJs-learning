@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
     <style>
-        :root {
+        :root{
             --white: #fff;
             --blue: #00bfff;
         }
-
-        body {
+        body{
             background: var(--blue);
             text-align: center;
         }
-
-        h1 {
+        h1{
             font-size: 80px;
             color: var(--white);
         }
-
-        p {
+        p{
             padding-top: 30px;
             font-size: 30px;
             color: var(--white);
@@ -27,14 +24,8 @@
     </style>
 </head>
 <body>
-<%- include('partials/nav.ejs') %>
-<p>Welcome to the profile of <strong><%= person %></strong></p>
-<p>Age : <%= data.age %></p>
-<p>Job : <%= data.job %></p>
-<p>Hobbies: </p>
-<% data.hobbies.forEach(function(item){ %>
-    <li><%= item %></li>
-<% }) %>
-<hr>
+<%- include('partials/nav.ejs')%>
+<h1>Welcome Home</h1>
+<p>Best website</p>
 </body>
 </html>
