@@ -30,6 +30,10 @@
 <p>Welcome to the profile of <strong><%= person %></strong></p>
 <p>Age : <%= data.age %></p>
 <p>Job : <%= data.job %></p>
+<p>Hobbies: </p>
+<% data.hobbies.forEach(function(item){ %>
+    <li><%= item %></li>
+<% }) %>
 <hr>
 </body>
 </html>
