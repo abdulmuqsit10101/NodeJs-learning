@@ -6,6 +6,8 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
+app.use('/stuff', express.static('stuff'));
+
 app.get('/', function (req, res) {
   res.render('home');
 });
