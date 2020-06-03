@@ -15,3 +15,13 @@ p{
   font-size: 30px;
   color: var(--white);
 }
+#contact-form {
+  display: grid;
+  margin: 0 auto;
+  width: 400px;
+}
+#contact-form input {
+   margin: 10px 0;
+  font-size: 16px;
+  padding: 4px;
+}
